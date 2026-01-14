@@ -1,7 +1,7 @@
 import {useState} from "react"
 import {useNavigate} from "react-router-dom"
 import {ArrowLeft} from "lucide-react"
-import bgVideo from './assets/background.mp4';
+//import bgVideo from './assets/background.mp4';
 export default function Signup(){
     const [username , setUsername]=useState("")
     const [password,setPassword] =useState("")
