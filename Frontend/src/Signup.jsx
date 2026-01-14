@@ -2,6 +2,7 @@ import {useState} from "react"
 import {useNavigate} from "react-router-dom"
 import {ArrowLeft} from "lucide-react"
 //import bgVideo from './assets/background.mp4';
+const API_BASE_URL="https://webx-final-project-production.up.railway.app"
 export default function Signup(){
     const [username , setUsername]=useState("")
     const [password,setPassword] =useState("")
@@ -15,7 +16,7 @@ export default function Signup(){
             return alert("Please enter the details completely")
         }
         try{
-            const response=await fetch("https://webx-final-project-production.up.railway.app/api/signup",{
+            const response=await fetch(`${API_BASE_URL}/api/signup`,{
                 method:'POST',
                 header:{
                     'Content-Type':'application/json'

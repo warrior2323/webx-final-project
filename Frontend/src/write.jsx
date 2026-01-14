@@ -3,6 +3,7 @@ import {useParams,useNavigate} from 'react-router-dom'
 import StarterKit from '@tiptap/starter-kit'
 import Placeholder from '@tiptap/extension-placeholder'
 import pen from "./assets/pen_paper.png"
+const API_BASE_URL="https://webx-final-project-production.up.railway.app"
 export default function Write(){
   const navigate=useNavigate()
   const {id} =useParams()
@@ -46,7 +47,7 @@ export default function Write(){
     const summaryData=bodyeditor.getText()
     
 
-    const response =await fetch("https://webx-final-project-production.up.railway.app/owner/write",{
+    const response =await fetch(`${API_BASE_URL}/owner/write`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json'

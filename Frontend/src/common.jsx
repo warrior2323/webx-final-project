@@ -5,6 +5,7 @@ import Blog from './props/blogs'
 import default_img from "./assets/default.png"
 import Blogs from "./props/follow.jsx"
 const API_BASE_URL="https://webx-final-project-production.up.railway.app"
+
 export default function Common(){
     const navigate=useNavigate()
     const [blogs ,setBlogs]=useState([])

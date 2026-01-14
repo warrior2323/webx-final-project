@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom"
 import {ThumbsUp} from "lucide-react"
 import {useState,useEffect} from "react"
 import {ArrowLeft} from "lucide-react"
+const API_BASE_URL="https://webx-final-project-production.up.railway.app"
 export default function Post(){
     const location=useLocation()
     const {title,content,username,date,post_id}=location.state || {}
@@ -15,7 +16,7 @@ export default function Post(){
     useEffect(()=>{
 
         const checkLikeStatus=async ()=>{
-         const response =await fetch("https://webx-final-project-production.up.railway.app/likecomment/like_check",{
+         const response =await fetch(`${API_BASE_URL}/likecomment/like_check`,{
             method:'POST',
             headers:{
                 'Content-Type':"application/json",
@@ -44,7 +45,7 @@ export default function Post(){
       
     useEffect(()=>{
         const getComments=async ()=>{
-            const response = await fetch("https://webx-final-project-production.up.railway.app/likecomment/getcomment",{
+            const response = await fetch(`${API_BASE_URL}/likecomment/getcomment`,{
                 method:"POST",
                 headers:{
                     'Content-Type':'application/json',
@@ -77,7 +78,7 @@ export default function Post(){
             return alert("comment something bro!")
         }
 
-        const response =await fetch("https://webx-final-project-production.up.railway.app/likecomment/comment",{
+        const response =await fetch(`${API_BASE_URL}/likecomment/comment`,{
             method:'POST',
             headers:{
                 'Content-Type':"application/json",
@@ -108,7 +109,7 @@ export default function Post(){
         if(isLiked){
             setFillColor("black")
 
-            const response= await fetch("https://webx-final-project-production.up.railway.app/likecomment/like",{
+            const response= await fetch(`${API_BASE_URL}/likecomment/like`,{
                 method:"POST",
                 headers:{
                     'Content-Type':"application/json",
@@ -129,7 +130,7 @@ export default function Post(){
         }else{
            setFillColor("none")
 
-           const response=await fetch("https://webx-final-project-production.up.railway.app/likecomment/like",{
+           const response=await fetch(`${API_BASE_URL}/likecomment/like`,{
             method:"DELETE",
             headers:{
                 'Content-Type':"application/json",
