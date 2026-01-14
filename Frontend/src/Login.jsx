@@ -1,7 +1,7 @@
 import {useState} from "react"
 import {useNavigate} from "react-router-dom"
 //import bgVideo from './assets/background.mp4';
-
+const API_BASE_URL="https://webx-final-project-production.up.railway.app"
 export default function Signup(){
     const [username , setUsername]=useState("")
     const [password,setPassword] =useState("")
@@ -14,7 +14,7 @@ export default function Signup(){
             return alert("Please enter the details completely")
         }
         try{
-            const response=await fetch("http://localhost:3000/api/login",{
+            const response=await fetch(`${API_BASE_URL}/api/login`,{
                 method:'POST',
                 headers:{
                     'Content-Type':"application/json"

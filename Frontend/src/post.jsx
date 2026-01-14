@@ -15,7 +15,7 @@ export default function Post(){
     useEffect(()=>{
 
         const checkLikeStatus=async ()=>{
-         const response =await fetch("http://localhost:3000/likecomment/like_check",{
+         const response =await fetch("https://webx-final-project-production.up.railway.app/likecomment/like_check",{
             method:'POST',
             headers:{
                 'Content-Type':"application/json",
@@ -44,7 +44,7 @@ export default function Post(){
       
     useEffect(()=>{
         const getComments=async ()=>{
-            const response = await fetch("http://localhost:3000/likecomment/getcomment",{
+            const response = await fetch("https://webx-final-project-production.up.railway.app/likecomment/getcomment",{
                 method:"POST",
                 headers:{
                     'Content-Type':'application/json',
@@ -77,7 +77,7 @@ export default function Post(){
             return alert("comment something bro!")
         }
 
-        const response =await fetch("http://localhost:3000/likecomment/comment",{
+        const response =await fetch("https://webx-final-project-production.up.railway.app/likecomment/comment",{
             method:'POST',
             headers:{
                 'Content-Type':"application/json",
@@ -108,7 +108,7 @@ export default function Post(){
         if(isLiked){
             setFillColor("black")
 
-            const response= await fetch("http://localhost:3000/likecomment/like",{
+            const response= await fetch("https://webx-final-project-production.up.railway.app/likecomment/like",{
                 method:"POST",
                 headers:{
                     'Content-Type':"application/json",
@@ -129,7 +129,7 @@ export default function Post(){
         }else{
            setFillColor("none")
 
-           const response=await fetch("http://localhost:3000/likecomment/like",{
+           const response=await fetch("https://webx-final-project-production.up.railway.app/likecomment/like",{
             method:"DELETE",
             headers:{
                 'Content-Type':"application/json",

@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import Blog from './props/blogs'
 import default_img from "./assets/default.png"
 import Blogs from "./props/follow.jsx"
+const API_BASE_URL="https://webx-final-project-production.up.railway.app"
 export default function Common(){
     const navigate=useNavigate()
     const [blogs ,setBlogs]=useState([])
@@ -15,7 +16,7 @@ export default function Common(){
         const fetchData=async ()=>{
             try{
                 setIsLoading(true)
-            const response =await fetch('http://localhost:3000/read/allblogs',{
+            const response =await fetch(`${API_BASE_URL}/read/allblogs`,{
                 method:'GET',
                 headers:{
                     "Content-Type":"application/json",
@@ -41,7 +42,7 @@ export default function Common(){
 
         const fetchusers=async()=>{
             try{
-            const response =await fetch("http://localhost:3000/getusers/users",{
+            const response =await fetch(`${API_BASE_URL}/getusers/users`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",

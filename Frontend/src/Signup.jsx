@@ -15,7 +15,7 @@ export default function Signup(){
             return alert("Please enter the details completely")
         }
         try{
-            const response=await fetch("http://localhost:3000/api/signup",{
+            const response=await fetch("https://webx-final-project-production.up.railway.app/api/signup",{
                 method:'POST',
                 header:{
                     'Content-Type':'application/json'

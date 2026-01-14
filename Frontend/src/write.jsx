@@ -46,7 +46,7 @@ export default function Write(){
     const summaryData=bodyeditor.getText()
     
 
-    const response =await fetch("http://localhost:3000/owner/write",{
+    const response =await fetch("https://webx-final-project-production.up.railway.app/owner/write",{
       method:'POST',
       headers:{
         'Content-Type':'application/json'
