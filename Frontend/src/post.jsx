@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom"
 import {ThumbsUp} from "lucide-react"
 import {useState,useEffect} from "react"
 import {ArrowLeft} from "lucide-react"
-const API_BASE_URL="https://webx-final-project-production.up.railway.app"
+const API_BASE_URL=import.meta.env.VITE_BACKEND_URL
 export default function Post(){
     const location=useLocation()
     const {title,content,username,date,post_id}=location.state || {}

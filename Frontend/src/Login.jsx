@@ -1,7 +1,7 @@
 import {useState} from "react"
 import {useNavigate} from "react-router-dom"
 //import bgVideo from './assets/background.mp4';
-const API_BASE_URL="https://webx-final-project-production.up.railway.app"
+const API_BASE_URL=import.meta.env.VITE_BACKEND_URL
 export default function Signup(){
     const [username , setUsername]=useState("")
     const [password,setPassword] =useState("")

@@ -3,7 +3,7 @@ import {useParams,useNavigate} from 'react-router-dom'
 import StarterKit from '@tiptap/starter-kit'
 import Placeholder from '@tiptap/extension-placeholder'
 import pen from "./assets/pen_paper.png"
-const API_BASE_URL="https://webx-final-project-production.up.railway.app"
+const API_BASE_URL=import.meta.env.VITE_BACKEND_URL
 export default function Write(){
   const navigate=useNavigate()
   const {id} =useParams()

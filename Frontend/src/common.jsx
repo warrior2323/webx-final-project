@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import Blog from './props/blogs'
 import default_img from "./assets/default.png"
 import Blogs from "./props/follow.jsx"
-const API_BASE_URL="https://webx-final-project-production.up.railway.app"
+const API_BASE_URL=import.meta.env.VITE_BACKEND_URL
 
 export default function Common(){
     const navigate=useNavigate()
