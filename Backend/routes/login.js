@@ -22,7 +22,7 @@ router.post('/signup',async (req,res)=>{
             const hashedPassword =await bcrypt.hash(req.body.password,salt)
             console.log(salt)
             console.log(hashedPassword)
-            const insert_query='INSERT INTO users(username,email,password_hash) VALUES($1,$2,$3)'
+            const insert_query='INSERT INTO users(username,email,password_hash) VALUES($1,$2,$3) RETURNING *'
             const newUser= await pool.query(insert_query,[req.body.username,req.body.email,hashedPassword])
             const userData=newUser.rows[0]
 
