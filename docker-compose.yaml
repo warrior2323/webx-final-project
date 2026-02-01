@@ -16,7 +16,7 @@ services:
       context: ./frontend
     restart: always
     env_file:
-      ./Frontend/.env.local
+      - ./Frontend/.env.local
     ports:
       - 5173:5173
     depends_on:
