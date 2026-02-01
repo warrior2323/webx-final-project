@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./Backend
+    restart: always
+    env_file: 
+      - ./Backend/.env 
+
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./Backend:/usr/src/app
+      - /usr/src/app/node_modules
+    
+  frontend:
+    build:
+      context: ./frontend
+    restart: always
+    env_file:
+      ./Frontend/.env.local
+    ports:
+      - 5173:5173
+    depends_on:
+      - backend
+    
+
+volumes:
+  db_data:
+    
