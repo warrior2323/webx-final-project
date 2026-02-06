@@ -59,7 +59,7 @@ export default function Post(){
             const data = await response.json()
 
             if(response.ok){
-                const comments_=data.map((value,index)=><p className="text-white ml-12" key={index}>{value.comment}</p>)
+                const comments_=data.map((value,index)=><p className="text-white ml-12 mt-2 text-[20px]" key={index}>{value.user_username} : {value.comment}</p>)
                 setComments(comments_)            
             }else{
                 console.log("there is some mistake.")
@@ -87,7 +87,8 @@ export default function Post(){
             body:JSON.stringify({
                 id:localStorage.userId,
                 post_id:post_id,
-                comment:comment
+                comment:comment,
+                user_username:localStorage.username
             })
          })
 
@@ -149,23 +150,23 @@ export default function Post(){
         <>
         {isVisible && 
         <div className="fixed top-0 left-0 flex justify-center items-center z-1000 h-full w-full">
-            <div className="flex flex-col justify-center bg-violet-500 p-5 rounded-xl z-1000">
-                <div className="flex items-left">
+            <div className="flex flex-col justify-start bg-black p-5 rounded-xl z-1000 w-[30%] h-[15%]">
+                <div className="flex items-left mb-2">
                     <button onClick={()=>{setVisible(false)}}>
-                        <ArrowLeft className="h-5 w-5 text-black cursor-pointer"></ArrowLeft>
+                        <ArrowLeft className="h-10 w-10 text-violet-500 cursor-pointer"></ArrowLeft>
                     </button>
                 </div>
                 <form onSubmit={handleSubmitComment}>
-                <input type="text" placeholder="comment" className="border border-black" value={comment} onChange={(e)=> setComment(e.target.value)}></input>
+                <input type="text" placeholder="comment" className="border mt-3 border-violet-500 w-full bg-white text-violet-500 h-10 text-[20px] font-bold p-2 rounded-xl" value={comment} onChange={(e)=> setComment(e.target.value)}></input>
                 </form>
             </div>
         </div>
         }
-        <span className="ml-10 text-white text-[30px]">{username}</span>
+        <span className="ml-20 text-white text-[30px]">{username}</span>
         <span className="ml-10 text-white text-[20px]">{date}</span>
-        <h1 className="text-violet-500 text-[40px] ml-10">{title}</h1>
-        <div className="border border-violet-500 bg-violet-500 mr-10 ml-10 rounded-2xl shadow-white shadow">
-        <p className="text-white text-[25px] ml-10 mr-10">{content}</p>
+        <h1 className="text-violet-500 text-[40px] ml-20 font-bebas">{title}</h1>
+        <div className="border border-violet-500 bg-violet-500 mr-10 ml-10 mt-5 rounded-2xl shadow-white shadow">
+        <p className="text-white text-[25px] ml-10 mr-10 mt-5">{content}</p>
         </div>
         <div className="flex justify-end items-center mr-10 mt-2 gap-2 ">
         <button className="bg-violet-500 text-white cursor-pointer rounded-2xl" onClick={handleClick}  ><ThumbsUp fill={fillColor} className="size-10"/></button>

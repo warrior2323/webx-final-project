@@ -46,8 +46,8 @@ router.post("/like_check",async (req,res)=>{
 
 router.post("/comment",async (req,res)=>{
     try{
-        NEW_POST_QUERY='INSERT INTO comments(user_id,post_id,comment) VALUES($1,$2,$3)'
-        await pool.query(NEW_POST_QUERY,[req.body.id,req.body.post_id,req.body.comment])
+        NEW_POST_QUERY='INSERT INTO comments(user_id,post_id,comment,user_username) VALUES($1,$2,$3,$4)'
+        await pool.query(NEW_POST_QUERY,[req.body.id,req.body.post_id,req.body.comment,req.body.user_username])
         res.status(200).send('"Comment set!"')
     }catch(err){
         console.error(err)

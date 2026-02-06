@@ -71,7 +71,7 @@ export default function Common(){
     },[])
     return(
         <>
-        <nav className='md: flex justify-between items-center bg-gray-500 fixed w-full top-0 h-20 z-1000'>
+        <nav className='md: flex justify-between items-center bg-violet-500 fixed w-full top-0 h-20 z-1000'>
             <button className=' ml-5 md:ml-25'><Menu size={36} className='md : text-black'/></button>
             <h1 className='text-[20px] md:text-[30px] font-sans font-bold'>Reader</h1>
             <div className='md: flex justify-center items-center gap-10 mr-25'>

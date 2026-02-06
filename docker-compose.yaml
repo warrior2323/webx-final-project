@@ -4,7 +4,8 @@ services:
     restart: always
     env_file: 
       - ./Backend/.env 
-
+      
+    dns: [8.8.8.8]
     ports:
       - "3000:3000"
     volumes:
